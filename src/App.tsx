@@ -1,34 +1,35 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import { useState } from "react";
+import { places } from "./data/places";
+import { Header } from "./components/Header";
+import { PhotoCardList } from "./components/PhotoCardList";
+import { SearchBar } from "./components/SearchBar";
+import { LikedCounterBox } from "./components/LikedCounterBox";
+import { JoinPhotoClubButton } from "./components/JoinPhotoClubButton";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [photos, setPhotos] = useState(places);
+
+  function handleLikedPhoto(id: number, isLiked: boolean) {
+    const newPhotos = photos.map((photo) => {
+      if (photo.id === id) {
+        photo.isLiked = isLiked;
+      }
+      return photo;
+    });
+    setPhotos(newPhotos);
+  }
+
+  const likedPhotosCount = photos.filter((photo) => photo.isLiked).length;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Hello World</h1>
-      <h2>-indrasetiadhi-</h2>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <SearchBar />
+      <LikedCounterBox count={likedPhotosCount} />
+      <PhotoCardList photos={photos} handleLikedPhoto={handleLikedPhoto} />
+      <JoinPhotoClubButton />
+      {/* <FormCommunity /> */}
     </>
   );
 }
