@@ -1,3 +1,4 @@
+import cls from "../App.module.css";
 import { PhotoCard } from "./PhotoCard";
 
 type PhotoCardListProps = {
@@ -12,7 +13,7 @@ type PhotoCardListProps = {
 
 export function PhotoCardList(props: PhotoCardListProps) {
   return (
-    <div>
+    <div className={cls.photoListContainer}>
       {props.photos.map((photo) => (
         <PhotoCard
           key={photo.id}

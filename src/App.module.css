@@ -1,0 +1,81 @@
+.header {
+  text-align: center;
+}
+
+.photoListContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 900px;
+  margin-top: 1rem;
+}
+
+.photoCard {
+  transition-duration: 0.5s;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.photoCard img {
+  width: 200px;
+  height: 276px;
+  border-radius: 0.5rem;
+}
+
+.photoCard .likeButton {
+  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+  margin: 0;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  border-width: 1px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.photoCard .likedButton {
+  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+  margin: 0;
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 128 6 / var(--tw-bg-opacity));
+  border-width: 1px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.photoCard .likeButton p {
+  color: black;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin: 0;
+}
+
+.photoCard .likedButton p {
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin: 0;
+}
+
+.photoCard h3 {
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+}
