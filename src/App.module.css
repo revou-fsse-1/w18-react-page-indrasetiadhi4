@@ -79,3 +79,43 @@
   width: 100%;
   padding: 8px;
 }
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+}
+
+.searchBarInput {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: gray;
+  background-color: white;
+  margin: 0.25rem 0 0 0;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  width: 300px;
+}
+
+.joinButton {
+  display: flex;
+  justify-content: center;
+}
+
+.joinButton button {
+  margin: 1rem 0 0 0;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.likedCounter {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: rgb(21 128 6);
+  border-bottom-left-radius: 1rem;
+}

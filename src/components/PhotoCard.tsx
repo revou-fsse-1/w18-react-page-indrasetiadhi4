@@ -13,14 +13,20 @@ export function PhotoCard(props: PhotoCardProps) {
   return (
     <div className={cls.photoCard}>
       {props.isLiked ? (
-        <div className={cls.likedButton}>
-          <span onClick={() => props.handleLikedPhoto(props.id, false)}>
+        <div
+          className={cls.likedButton}
+          onClick={() => props.handleLikedPhoto(props.id, false)}
+        >
+          <span>
             <p>LIKED</p>
           </span>
         </div>
       ) : (
-        <div className={cls.likeButton}>
-          <span onClick={() => props.handleLikedPhoto(props.id, true)}>
+        <div
+          className={cls.likeButton}
+          onClick={() => props.handleLikedPhoto(props.id, true)}
+        >
+          <span>
             <p>LIKE</p>
           </span>
         </div>

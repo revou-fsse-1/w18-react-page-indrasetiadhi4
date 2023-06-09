@@ -6,36 +6,40 @@ type FormCommunityProps = {
 
 export function FormCommunity(props: FormCommunityProps) {
   return (
-    <div className={props.isShowForm ? cls.form : cls.hiddenForm}>
-      <div>
+    <div className={props.isShowForm ? cls.showForm : cls.hiddenForm}>
+      <div className={cls.formBox}>
         <h1>Register to Photo Club Member</h1>
         <p>Get countless benefit by joining as a member of Photo Club!</p>
         <div>
-          <form>
+          <form className={cls.form}>
             <label>
-              <span>User Email</span>
-              <input type="text" name="email" placeholder="Insert your email" />
-              <span></span>
+              <div className={cls.formKey}>User Email</div>
+              <input
+                className={cls.formValue}
+                type="text"
+                name="email"
+                placeholder="Insert your email"
+              />
             </label>
             <label>
-              <span>First Name</span>
+              <div className={cls.formKey}>First Name</div>
               <input
+                className={cls.formValue}
                 type="text"
                 name="firstname"
                 placeholder="Insert your first name"
               />
-              <span></span>
             </label>
             <label>
-              <span>Last Name</span>
+              <div className={cls.formKey}>Last Name</div>
               <input
+                className={cls.formValue}
                 type="text"
                 name="lastname"
                 placeholder="Insert your last name"
               />
-              <span></span>
             </label>
-            <button>Register Now</button>
+            <button className={cls.formButton}>Register Now</button>
           </form>
         </div>
       </div>

@@ -4,7 +4,7 @@ export const places = [
     title: "The Trails",
     imageUrl:
       "https://images.pexels.com/photos/13835530/pexels-photo-13835530.jpeg?auto=compress&cs=tinysrgb&w=800",
-    isLiked: true,
+    isLiked: false,
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ export const places = [
     title: "The Lakeside",
     imageUrl:
       "https://images.pexels.com/photos/11389480/pexels-photo-11389480.jpeg?auto=compress&cs=tinysrgb&w=800",
-    isLiked: true,
+    isLiked: false,
   },
   {
     id: 4,
