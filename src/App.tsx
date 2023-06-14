@@ -1,5 +1,3 @@
-//import "./App.css";
-//import cls from "./App.module.css";
 import { useState } from "react";
 import { places } from "./data/places";
 import { Header } from "./components/Header";
@@ -8,10 +6,12 @@ import { SearchBar } from "./components/SearchBar";
 import { LikedCounterBox } from "./components/LikedCounterBox";
 import { JoinPhotoClubButton } from "./components/JoinPhotoClubButton";
 import { FormCommunity } from "./components/FormCommunity";
+import cls from "./components/form.module.css";
 
 function App() {
   const [photos, setPhotos] = useState(places);
   const [isShowForm, setIsShowForm] = useState(false);
+  const [filterValue, setFilterValue] = useState("");
 
   function handleLikedPhoto(id: number, isLiked: boolean) {
     const newPhotos = photos.map((photo) => {
@@ -28,11 +28,17 @@ function App() {
   return (
     <div className="body">
       <Header />
-      <SearchBar />
+      <SearchBar setFilterValue={setFilterValue} />
       <LikedCounterBox count={likedPhotosCount} />
-      <PhotoCardList photos={photos} handleLikedPhoto={handleLikedPhoto} />
+      <PhotoCardList
+        photos={photos}
+        handleLikedPhoto={handleLikedPhoto}
+        filterValue={filterValue}
+      />
       <JoinPhotoClubButton setIsShowForm={setIsShowForm} />
-      <FormCommunity isShowForm={isShowForm} />
+      <div className={isShowForm ? cls.showForm : cls.hiddenForm}>
+        <FormCommunity setIsShowForm={setIsShowForm} />
+      </div>
     </div>
   );
 }

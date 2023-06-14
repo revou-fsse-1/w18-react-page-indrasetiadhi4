@@ -9,12 +9,17 @@ type PhotoCardListProps = {
     isLiked: boolean;
   }[];
   handleLikedPhoto: (id: number, isLiked: boolean) => void;
+  filterValue: string;
 };
 
 export function PhotoCardList(props: PhotoCardListProps) {
+  const filteredPhotos = props.photos.filter((photo) =>
+    photo.title.toLowerCase().includes(props.filterValue.toLowerCase())
+  );
+
   return (
     <div className={cls.photoListContainer}>
-      {props.photos.map((photo) => (
+      {filteredPhotos.map((photo) => (
         <PhotoCard
           key={photo.id}
           id={photo.id}
